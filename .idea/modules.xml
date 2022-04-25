@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/challenges_scientific_computing.iml" filepath="$PROJECT_DIR$/.idea/challenges_scientific_computing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/freecodecamp_challenge_budget_app.iml" filepath="$PROJECT_DIR$/.idea/freecodecamp_challenge_budget_app.iml" />
     </modules>
   </component>
 </project>
