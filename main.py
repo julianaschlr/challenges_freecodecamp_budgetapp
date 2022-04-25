@@ -1,35 +1,25 @@
-list_of_problems = ["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]
+# This entrypoint file to be used in development. Start by reading README.md
+import budget
+from budget import create_spend_chart
+from unittest import main
 
+food = budget.Category("Food")
+food.deposit(1000, "initial deposit")
+food.withdraw(10.15, "groceries")
+food.withdraw(15.89, "restaurant and more food for dessert")
+print(food.get_balance())
+clothing = budget.Category("Clothing")
+food.transfer(50, clothing)
+clothing.withdraw(25.55)
+clothing.withdraw(100)
+auto = budget.Category("Auto")
+auto.deposit(1000, "initial deposit")
+auto.withdraw(15)
 
-def arithmetic_arranger(problems):
-    for i in problems:
-        
-    message = ""
-    if len(problems) > 5:
-        message = "Error: Too many problems."
-        return message
+print(food)
+print(clothing)
 
-    operations = list(map(lambda x: x.split()[1], problems))
-    if set(operations) != {"-", "+"} and len(set(operations)) != 2:
-        message = "Error: Operator must be '+' or '-'."
-        return message
+print(create_spend_chart([food, clothing, auto]))
 
-    numbers = []
-    for i in problems:
-        p = i.split()
-        numbers.extend(p[0], p[2])
-
-    if not all(map(lambda x: x.isdigit(), numbers)):
-        message = "Error: Numbers must only contain digits."
-        return message
-
-    if not all(map(lambda x: len(numbers) <= 4, numbers)):
-        message = "Error: Numbers cannot be more than four digits."
-
-    else:
-        message = "okay"
-        return message
-
-
-problem = input("Please enter a list of problems")
-arithmetic_arranger(problem)
+# Run unit tests automatically
+main(module='test_module', exit=False)
